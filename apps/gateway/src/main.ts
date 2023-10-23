@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import { UsersModule } from './users.module';
+import { AppModule } from './app.module';
 import { config } from 'dotenv';
 import { join } from 'path';
 
@@ -8,10 +8,12 @@ const envFilePath = join(__dirname, `../../../${fileName}.env`);
 const ENV = config({ path: envFilePath }).parsed;
 
 async function bootstrap() {
-  const app = await NestFactory.create(UsersModule);
-  await app.listen(ENV.USERS_PORT);
+  const app = await NestFactory.create(AppModule);
+
+  await app.listen(ENV.GATEWAY_PORT);
 
   console.log(`
-  🚀 GraphQL Microservice - Users - , launched at http://${ENV.USERS_HOST}:${ENV.USERS_PORT}/graphql`);
+  🚀 GraphQL Microservice - Gateway - , launched at http://${ENV.GATEWAY_HOST}:${ENV.GATEWAY_PORT}/graphql`);
 }
+
 bootstrap();
