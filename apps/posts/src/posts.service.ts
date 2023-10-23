@@ -27,4 +27,8 @@ export class PostsService {
   // remove(id: number) {
   //   return `This action removes a #${id} post`;
   // }
+
+  forAuthor(authorId: string) {
+    return this.posts.filter((post) => post.authorId === authorId);
+  }
 }
