@@ -1,7 +1,13 @@
-import { ObjectType, Field, Int } from '@nestjs/graphql';
+import { ObjectType, Field, ID } from '@nestjs/graphql';
 
 @ObjectType()
 export class User {
-  @Field(() => Int, { description: 'Example field (placeholder)' })
-  exampleField: number;
+  @Field(() => ID, { description: 'Uniq id of user' })
+  id: string;
+
+  @Field({ description: 'Email of user' })
+  email: string;
+
+  @Field({ description: 'Password of user' })
+  password: string;
 }
