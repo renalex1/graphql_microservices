@@ -24,6 +24,8 @@
 
 ## Description
 
+### Node.js GraphQL Microservices With Nest.js & Apollo Federation 2
+
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
